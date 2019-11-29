@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://larashop.test'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'zh_CN',
 
     /*
     |--------------------------------------------------------------------------

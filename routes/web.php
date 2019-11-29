@@ -25,3 +25,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+// auth 中间件代表需要登录，verified中间件代表需要经过邮箱验证
+Route::group(['middleware' => ['auth', 'verified']], function() {
+    Route::get('user_addresses', 'UserAddressesController@index')->name('user_addresses.index');
+});
